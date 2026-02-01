@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0 (2026-02-01)
+
+
+### Features
+
+* Update README.md for metacubexd-classic ([7d4bc72](https://github.com/Plutonium141/metacubexd-classic/commit/7d4bc724634b8f7975258e3c41525a60d2c445fc))
+
 ## [1.193.0](https://github.com/MetaCubeX/metacubexd/compare/v1.192.0...v1.193.0) (2025-09-22)
 
 
