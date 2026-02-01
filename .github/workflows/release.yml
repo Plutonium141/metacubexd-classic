@@ -73,7 +73,8 @@ jobs:
       packages: write
     needs: release-please
     runs-on: ubuntu-latest
-    if: ${{ needs.release-please.outputs.release_created }}
+    if: false
+    #${{ needs.release-please.outputs.release_created }}
     steps:
       - uses: actions/checkout@v6
 
@@ -104,6 +105,7 @@ jobs:
             ghcr.io/metacubex/metacubexd:${{ needs.release-please.outputs.tag_name }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
 
 
 
