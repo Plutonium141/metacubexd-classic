@@ -22,7 +22,7 @@ jobs:
         id: release
         uses: googleapis/release-please-action@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.CI_TOKEN }}
           release-type: node
 
   release-assets:
@@ -104,6 +104,7 @@ jobs:
             ghcr.io/metacubex/metacubexd:${{ needs.release-please.outputs.tag_name }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
 
 
 
