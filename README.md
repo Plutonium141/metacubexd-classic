@@ -34,7 +34,7 @@ external-controller: 0.0.0.0:9090
 > First time setup
 
 ```shell
-git clone https://github.com/metacubex/metacubexd.git -b gh-pages /etc/mihomo/ui
+git clone https://github.com/Plutonium141/metacubexd-classic.git -b gh-pages /etc/mihomo/ui
 ```
 
 Make sure you have external-ui directory set correctly in your config file
@@ -129,4 +129,5 @@ pnpm serve
 
 - [SolidJS](https://github.com/solidjs/solid)
 - [daisyUI](https://github.com/saadeghi/daisyui)
+
 
