@@ -1,6 +1,6 @@
-# metacubexd
+# metacubexd-classic
 
-Mihomo Dashboard, The Official One, XD
+Mihomo Dashboard, XD
 
 ![preview-overview](https://assets.solidjs.com/banner?project=metacubexd)
 
@@ -129,3 +129,4 @@ pnpm serve
 
 - [SolidJS](https://github.com/solidjs/solid)
 - [daisyUI](https://github.com/saadeghi/daisyui)
+
