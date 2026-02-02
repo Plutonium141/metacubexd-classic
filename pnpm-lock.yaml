@@ -69,8 +69,8 @@ importers:
         specifier: ^0.15.3
         version: 0.15.3(solid-js@1.9.9)
       '@tabler/icons-solidjs':
-        specifier: ^3.35.0
-        version: 3.35.0(solid-js@1.9.9)
+        specifier: ^3.36.1
+        version: 3.36.1(solid-js@1.9.9)
       '@tailwindcss/typography':
         specifier: ^0.5.18
         version: 0.5.18(tailwindcss@4.1.13)
@@ -1370,13 +1370,13 @@ packages:
     peerDependencies:
       '@svgdotjs/svg.js': ^3.2.4
 
-  '@tabler/icons-solidjs@3.35.0':
-    resolution: {integrity: sha512-9kJxO7ITryM30xgmXJgYkebGXRjXIKIwue5g8AQfk+z0eNLFZqWz5w1833KPSNy/2k/86Pe0IOZJ4Gav3Th5xw==}
+  '@tabler/icons-solidjs@3.36.1':
+    resolution: {integrity: sha512-lf1oJ0+S8xDVX4AojJXQk4LmHHidzrrhaxtbfsaKLaDuHHuXytJ8qBLfg3k/FceRWLJbh0HQH+vr9evLbC1lpA==}
     peerDependencies:
       solid-js: ^1.4.7
 
-  '@tabler/icons@3.35.0':
-    resolution: {integrity: sha512-yYXe+gJ56xlZFiXwV9zVoe3FWCGuZ/D7/G4ZIlDtGxSx5CGQK110wrnT29gUj52kEZoxqF7oURTk97GQxELOFQ==}
+  '@tabler/icons@3.36.1':
+    resolution: {integrity: sha512-f4Jg3Fof/Vru5ioix/UO4GX+sdDsF9wQo47FbtvG+utIYYVQ/QVAC0QYgcBbAjQGfbdOh2CCf0BgiFOF9Ixtjw==}
 
   '@tailwindcss/node@4.1.18':
     resolution: {integrity: sha512-DoR7U1P7iYhw16qJ49fgXUlry1t4CpXeErJHnQ44JgTSKMaZUdf17cfn5mHchfJ4KRBZRFA/Coo+MUF5+gOaCQ==}
@@ -5228,12 +5228,12 @@ snapshots:
     dependencies:
       '@svgdotjs/svg.js': 3.2.4
 
-  '@tabler/icons-solidjs@3.35.0(solid-js@1.9.9)':
+  '@tabler/icons-solidjs@3.36.1(solid-js@1.9.9)':
     dependencies:
-      '@tabler/icons': 3.35.0
+      '@tabler/icons': 3.36.1
       solid-js: 1.9.9
 
-  '@tabler/icons@3.35.0': {}
+  '@tabler/icons@3.36.1': {}
 
   '@tailwindcss/node@4.1.18':
     dependencies:
