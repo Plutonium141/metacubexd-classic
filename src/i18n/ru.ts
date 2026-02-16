@@ -58,6 +58,8 @@ export default {
   autoSwitchTheme: 'Автоматически переключать тему',
   favDayTheme: 'Предпочитаемая светлая тема',
   favNightTheme: 'Предпочитаемая темная тема',
+  enableGradientThemeColor: 'Включить градиентную цветовую тему',
+  enableLatencyTestHistory: 'Включить историю тестов задержки',
   renderInTwoColumns: 'Отображать в два столбца',
   updateGEODatabases: 'Обновить GEO БД',
   restartCore: 'Перезапустить ядро',

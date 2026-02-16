@@ -26,10 +26,12 @@ import {
   favDayTheme,
   favNightTheme,
   fontFamily,
+  gradientThemeColor,
   setAutoSwitchTheme,
   setFavDayTheme,
   setFavNightTheme,
   setFontFamily,
+  setGradientThemeColor,
   setSelectedEndpoint,
   useRequest,
 } from '~/signals'
@@ -481,6 +483,17 @@ const ConfigForXd = () => {
               )}
             </For>
           </Select>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <ConfigTitle>{t('enableGradientThemeColor')}</ConfigTitle>
+
+          <div class="h-[2.5rem]">
+            <Toggle
+              checked={gradientThemeColor()}
+              onChange={(e) => setGradientThemeColor(e.target.checked)}
+            />
+          </div>
         </div>
 
         <div class="flex flex-col">

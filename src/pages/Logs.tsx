@@ -21,7 +21,14 @@ import { twMerge } from 'tailwind-merge'
 import { Button, DocumentTitle, LogsSettingsModal } from '~/components'
 import { LOG_LEVEL } from '~/constants'
 import { useI18n } from '~/i18n'
-import { endpoint, logsTableSize, tableSizeClassName, useLogs } from '~/signals'
+import {
+  endpoint,
+  logLevel,
+  logsTableSize,
+  setLogLevel,
+  tableSizeClassName,
+  useLogs
+} from '~/signals'
 import { LogWithSeq } from '~/types'
 
 const fuzzyFilter: FilterFn<LogWithSeq> = (row, columnId, value, addMeta) => {
@@ -123,13 +130,31 @@ export default () => {
       <DocumentTitle>{t('logs')}</DocumentTitle>
 
       <div class="flex h-full flex-col gap-2">
-        <div class="join w-full">
+        <div class="join w-full justify-end">
           <input
             type="search"
             class="input input-sm join-item flex-1 flex-shrink-0 input-primary"
             placeholder={t('search')}
             onInput={(e) => setGlobalFilter(e.target.value)}
           />
+
+          <select
+            class="select join-item w-24 select-sm input-primary"
+            value={logLevel()}
+            onChange={(e) => setLogLevel(e.target.value as LOG_LEVEL)}
+          >
+            <For
+              each={[
+                LOG_LEVEL.Info,
+                LOG_LEVEL.Error,
+                LOG_LEVEL.Warning,
+                LOG_LEVEL.Debug,
+                LOG_LEVEL.Silent,
+              ]}
+            >
+              {(level) => <option value={level}>{t(level)}</option>}
+            </For>
+          </select>
 
           <Button
             class="join-item btn-sm btn-primary"

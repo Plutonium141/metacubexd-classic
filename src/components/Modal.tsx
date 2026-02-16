@@ -11,7 +11,7 @@ type Props = {
 }
 
 const actionClassName =
-  'sticky bottom-0 z-50 flex items-center justify-end bg-base-100 bg-opacity-80 p-4 backdrop-blur'
+  'sticky bottom-0 z-50 flex items-center justify-end bg-base-100 p-4'
 
 export const Modal: ParentComponent<Props> = (props) => {
   let dialogRef: HTMLDialogElement | undefined
@@ -22,7 +22,7 @@ export const Modal: ParentComponent<Props> = (props) => {
       class="modal modal-bottom sm:modal-middle"
     >
       <div class="modal-box p-0" onContextMenu={(e) => e.preventDefault()}>
-        <div class={twMerge(actionClassName, 'top-0 justify-between')}>
+        <div class={twMerge(actionClassName, 'top-0 justify-between shadow-lg shadow-base-100')}>
           <div class="flex items-center gap-4 text-xl font-bold">
             {props.icon}
 

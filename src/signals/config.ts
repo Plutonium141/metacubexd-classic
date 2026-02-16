@@ -221,3 +221,18 @@ export const [enableUDPIndicator, setEnableUDPIndicator] = makePersisted(
   createSignal(enableUDPIndicatorDefault),
   { name: 'enableUDPIndicator', storage: localStorage },
 )
+
+export const gradientThemeColorDefault = true
+
+export const [gradientThemeColor, setGradientThemeColor] = makePersisted(
+  createSignal(gradientThemeColorDefault),
+  { name: 'gradientThemeColor', storage: localStorage },
+)
+
+export const enableLatencyTestHistoryDefault = false
+
+export const [enableLatencyTestHistory, setEnableLatencyTestHistory] =
+  makePersisted(createSignal(enableLatencyTestHistoryDefault), {
+    name: 'enableLatencyTestHistory',
+    storage: localStorage,
+  })

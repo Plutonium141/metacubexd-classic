@@ -7,7 +7,12 @@ import type { JSX, ParentComponent } from 'solid-js'
 import { DocumentTitle } from '~/components'
 import { CHART_MAX_XAXIS, DEFAULT_CHART_OPTIONS } from '~/constants'
 import { useI18n } from '~/i18n'
-import { endpoint, latestConnectionMsg, useWsRequest } from '~/signals'
+import {
+  endpoint,
+  gradientThemeColor,
+  latestConnectionMsg,
+  useWsRequest
+} from '~/signals'
 
 const TrafficWidget: ParentComponent<{ label: JSX.Element }> = (props) => (
   <div class="stat flex-1 place-items-center">
@@ -111,7 +116,12 @@ export default () => {
       <DocumentTitle>{t('overview')}</DocumentTitle>
 
       <div class="flex flex-col gap-2 lg:h-full">
-        <div class="stats w-full flex-shrink-0 stats-vertical grid-cols-2 bg-primary shadow lg:flex lg:stats-horizontal">
+        <div
+          class={twMerge(
+            'stats w-full flex-shrink-0 stats-vertical grid-cols-2 shadow lg:flex lg:stats-horizontal',
+            gradientThemeColor() ? 'bg-gradient-to-br from-primary to-secondary' : 'bg-primary'
+          )}
+        >
           <TrafficWidget label={t('upload')}>
             {byteSize(traffic()?.up || 0).toString()}/s
           </TrafficWidget>

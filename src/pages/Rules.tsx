@@ -1,11 +1,11 @@
-import { IconReload } from '@tabler/icons-solidjs'
+import { IconChevronRight, IconReload } from '@tabler/icons-solidjs'
 import { createVirtualizer } from '@tanstack/solid-virtual'
 import { matchSorter } from 'match-sorter'
 import { twMerge } from 'tailwind-merge'
 import { Button, DocumentTitle } from '~/components'
 import { formatTimeFromNow, useStringBooleanMap } from '~/helpers'
 import { useI18n } from '~/i18n'
-import { endpoint, useRules } from '~/signals'
+import { endpoint, gradientThemeColor, useRules } from '~/signals'
 import { Rule, RuleProvider } from '~/types'
 
 enum ActiveTab {
@@ -129,13 +129,16 @@ export default () => {
 
       <div class="flex h-full flex-col gap-2">
         <div class="flex w-full flex-wrap items-center gap-2">
-          <div class="tabs gap-2 tabs-box tabs-sm">
+          <div class="tabs-box tabs gap-2 tabs-sm">
             <For each={tabs()}>
               {(tab) => (
                 <button
                   class={twMerge(
-                    activeTab() === tab.type && 'bg-primary !text-neutral',
-                    'tab gap-2 px-2',
+                    activeTab() === tab.type &&
+                      (gradientThemeColor()
+                        ? 'bg-gradient-to-br from-primary to-secondary !text-neutral'
+                        : 'bg-primary !text-neutral'),
+                    'sm:tab-md tab gap-2 px-2',
                   )}
                   onClick={() => setActiveTab(tab.type)}
                 >
@@ -146,29 +149,29 @@ export default () => {
             </For>
           </div>
 
-          <div class="join flex flex-1 items-center">
+          <Show when={activeTab() === ActiveTab.ruleProviders}>
+            <Button
+              class="btn btn-circle btn-sm"
+              disabled={allProviderIsUpdating()}
+              onClick={(e) => onUpdateAllProviderClick(e)}
+              icon={
+                <IconReload
+                  class={twMerge(
+                    allProviderIsUpdating() && 'animate-spin text-success',
+                  )}
+                />
+              }
+            />
+          </Show>
+
+          <div class="join flex flex-1 items-center justify-end">
             <input
-              class="input input-sm join-item flex-1 input-primary"
+              class="input input-sm join-item flex-1 input-primary max-w-96"
               type="search"
               placeholder={t('search')}
               value={globalFilter()}
               onInput={(e) => setGlobalFilter(e.currentTarget.value)}
             />
-
-            <Show when={activeTab() === ActiveTab.ruleProviders}>
-              <Button
-                class="btn join-item btn-sm btn-primary"
-                disabled={allProviderIsUpdating()}
-                onClick={(e) => onUpdateAllProviderClick(e)}
-                icon={
-                  <IconReload
-                    class={twMerge(
-                      allProviderIsUpdating() && 'animate-spin text-success',
-                    )}
-                  />
-                }
-              />
-            </Show>
           </div>
         </div>
 
@@ -197,17 +200,26 @@ export default () => {
                       transform: `translateY(${virtualizerItem.start}px)`,
                     }}
                   >
-                    <div class="card-border card bg-base-200 p-4 card-sm">
-                      <div class="flex items-center gap-2">
-                        <span class="break-all">{rule.payload}</span>
+                    <div class="card-border card bg-base-200 p-2 card-sm">
+                      <div class="flex items-center justify-start gap-4">
+                        <div class="flex min-w-8 justify-center">
+                          <span>{virtualizerItem.index + 1}</span>
+                        </div>
+                        <div class="flex flex-col items-start">
+                          <div class="flex items-center gap-2">
+                            <span class="break-all">{rule.payload}</span>
 
-                        <Show when={rule.size !== -1}>
-                          <div class="badge badge-sm">{rule.size}</div>
-                        </Show>
-                      </div>
+                            <Show when={rule.size !== -1}>
+                              <div class="badge badge-sm">{rule.size}</div>
+                            </Show>
+                          </div>
 
-                      <div class="text-xs text-slate-500">
-                        {`${rule.type} :: ${rule.proxy}`}
+                          <div class="text-sm text-slate-500">
+                            {`${rule.type}`}
+                            <IconChevronRight class="inline-block" size={18} />
+                            {`${rule.proxy}`}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -239,34 +251,45 @@ export default () => {
                       transform: `translateY(${virtualizerItem.start}px)`,
                     }}
                   >
-                    <div class="card-border card bg-base-200 p-4 card-sm">
-                      <div class="flex items-center gap-2 pr-8">
-                        <span class="break-all">{ruleProvider.name}</span>
+                    <div class="card-border card bg-base-200 py-2 ps-4 card-sm">
+                      <div class="flex justify-between">
+                        <div class="flex items-center justify-start gap-4">
+                          <div class="flex min-w-8 justify-center">
+                            <span>{virtualizerItem.index + 1}</span>
+                          </div>
+                          <div class="flex flex-col items-start">
+                            <div class="flex items-center gap-2">
+                              <span class="break-all">{ruleProvider.name}</span>
 
-                        <div class="badge badge-sm">
-                          {ruleProvider.ruleCount}
+                              <div class="badge badge-sm">
+                                {ruleProvider.ruleCount}
+                              </div>
+                            </div>
+
+                            <div class="text-sm text-slate-500">
+                              {`${ruleProvider.vehicleType} / ${ruleProvider.behavior} / ${t('updated')} ${formatTimeFromNow(ruleProvider.updatedAt)}`}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="items-center align-center flex">
+                          <Button
+                            class="btn-circle btn-sm mr-4"
+                            disabled={updatingMap()[ruleProvider.name]}
+                            onClick={(e) =>
+                              onUpdateProviderClick(e, ruleProvider.name)
+                            }
+                            icon={
+                              <IconReload
+                                class={twMerge(
+                                  updatingMap()[ruleProvider.name] &&
+                                    'animate-spin text-success',
+                                )}
+                              />
+                            }
+                          />
                         </div>
                       </div>
-
-                      <div class="text-xs text-slate-500">
-                        {`${ruleProvider.vehicleType} / ${ruleProvider.behavior} / ${t('updated')} ${formatTimeFromNow(ruleProvider.updatedAt)}`}
-                      </div>
-
-                      <Button
-                        class="absolute top-2 right-2 mr-2 btn-circle h-4 btn-sm"
-                        disabled={updatingMap()[ruleProvider.name]}
-                        onClick={(e) =>
-                          onUpdateProviderClick(e, ruleProvider.name)
-                        }
-                        icon={
-                          <IconReload
-                            class={twMerge(
-                              updatingMap()[ruleProvider.name] &&
-                                'animate-spin text-success',
-                            )}
-                          />
-                        }
-                      />
                     </div>
                   </div>
                 )

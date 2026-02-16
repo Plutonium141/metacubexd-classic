@@ -55,7 +55,9 @@ export const SubscriptionInfo = (props: {
       <div class="flex items-center gap-2 pt-1">
         <progress class="progress" value={info.percentage} max="100" />
 
-        <div class="badge badge-sm badge-secondary">{info.percentage}%</div>
+        <div class="badge badge-soft badge-sm badge-secondary">
+          {info.percentage}%
+        </div>
       </div>
 
       <div class="flex flex-wrap items-center justify-between">

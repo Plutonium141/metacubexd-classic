@@ -5,6 +5,7 @@ import { PROXIES_ORDERING_TYPE, PROXIES_PREVIEW_TYPE } from '~/constants'
 import { useI18n } from '~/i18n'
 import {
   autoCloseConns,
+  enableLatencyTestHistory,
   enableUDPIndicator,
   hideUnAvailableProxies,
   iconHeight,
@@ -14,6 +15,7 @@ import {
   proxiesPreviewType,
   renderProxiesInTwoColumns,
   setAutoCloseConns,
+  setEnableLatencyTestHistory,
   setEnableUDPIndicator,
   setHideUnAvailableProxies,
   setIconHeight,
@@ -131,6 +133,19 @@ export const ProxiesSettingsModal: Component<{
               type="checkbox"
               checked={enableUDPIndicator()}
               onChange={(e) => setEnableUDPIndicator(e.target.checked)}
+            />
+          </div>
+        </div>
+
+        <div>
+          <ConfigTitle withDivider>{t('enableLatencyTestHistory')}</ConfigTitle>
+
+          <div class="flex w-full justify-center">
+            <input
+              class="toggle"
+              type="checkbox"
+              checked={enableLatencyTestHistory()}
+              onChange={(e) => setEnableLatencyTestHistory(e.target.checked)}
             />
           </div>
         </div>

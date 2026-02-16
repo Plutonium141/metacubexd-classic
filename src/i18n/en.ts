@@ -56,6 +56,8 @@ export default {
   autoSwitchTheme: 'Automatically switch theme',
   favDayTheme: 'Favorite light theme',
   favNightTheme: 'Favorite dark theme',
+  enableGradientThemeColor: 'Enable gradient theme color',
+  enableLatencyTestHistory: 'Enable latency test history',
   renderInTwoColumns: 'Render In Two Columns',
   updateGEODatabases: 'Update GEO Databases',
   restartCore: 'Restart Core',

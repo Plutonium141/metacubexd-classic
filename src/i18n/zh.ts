@@ -58,6 +58,8 @@ export default {
   autoSwitchTheme: '自动切换主题',
   favDayTheme: '浅色主题偏好',
   favNightTheme: '深色主题偏好',
+  enableGradientThemeColor: '启用渐变主题色',
+  enableLatencyTestHistory: '启用测速历史记录',
   renderInTwoColumns: '双列渲染',
   updateGEODatabases: '更新 GEO 数据库',
   restartCore: '重启核心',

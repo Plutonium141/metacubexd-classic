@@ -8,7 +8,13 @@ import {
   formatProxyType,
   getLatencyClassName,
 } from '~/helpers'
-import { enableUDPIndicator, rootElement, useProxies } from '~/signals'
+import {
+  enableLatencyTestHistory,
+  enableUDPIndicator,
+  gradientThemeColor,
+  rootElement,
+  useProxies
+} from '~/signals'
 
 export const ProxyNodeCard = (props: {
   proxyName: string
@@ -62,7 +68,10 @@ export const ProxyNodeCard = (props: {
         as="div"
         class={twMerge(
           'indicator card w-full bg-neutral text-neutral-content',
-          isSelected && 'bg-primary text-primary-content',
+          isSelected &&
+            (gradientThemeColor()
+              ? 'bg-gradient-to-br from-primary to-secondary text-primary-content'
+              : 'bg-primary text-primary-content'),
         )}
         title={title()}
       >
@@ -73,18 +82,18 @@ export const ProxyNodeCard = (props: {
         <Tooltip.Trigger as="div">
           <div
             class={twMerge(
-              'card-body gap-1 space-y-1 p-2.5',
+              'card-body gap-1 space-y-1 p-2',
               onClick && 'cursor-pointer',
             )}
             onClick={onClick}
           >
-            <h2 class="card-title line-clamp-1 text-start text-sm break-all">
+            <h2 class="mb-0 card-title line-clamp-1 ps-0.5 text-start text-sm break-all">
               {proxyName}
             </h2>
 
             <div class="card-actions items-end justify-between gap-1">
-              <div class="flex flex-col gap-0.5">
-                <div class="text-xs font-semibold uppercase opacity-75">
+              <div class="flex flex-col gap-0.5 ps-0.5">
+                <div class="text-xs font-semibold uppercase italic opacity-75">
                   {formatProxyType(proxyNode()?.type)}
                 </div>
               </div>
@@ -111,54 +120,56 @@ export const ProxyNodeCard = (props: {
         </Tooltip.Trigger>
 
         <Tooltip.Portal mount={rootElement()}>
-          <Tooltip.Content class="z-50">
-            <Tooltip.Arrow class="text-neutral" />
+          <Show when={enableLatencyTestHistory()}>
+            <Tooltip.Content class="z-50">
+              <Tooltip.Arrow class="text-neutral" />
 
-            <div class="flex flex-col items-center gap-2 rounded-box bg-primary p-2.5 text-primary-content shadow-lg">
-              <h2 class="text-lg font-bold">{proxyName}</h2>
+              <div class="flex flex-col items-center gap-2 rounded-box bg-primary p-2.5 text-primary-content shadow-lg">
+                <h2 class="text-lg font-bold">{proxyName}</h2>
 
-              <Show when={specialTypes()}>
-                <div class="w-full text-xs uppercase">{specialTypes()}</div>
-              </Show>
+                <Show when={specialTypes()}>
+                  <div class="w-full text-xs uppercase">{specialTypes()}</div>
+                </Show>
 
-              <ul class="timeline timeline-vertical timeline-compact timeline-snap-icon">
-                <For each={latencyTestHistory}>
-                  {(latencyTestResult, index) => (
-                    <li>
-                      <Show when={index() > 0}>
-                        <hr />
-                      </Show>
+                <ul class="timeline timeline-vertical timeline-compact timeline-snap-icon">
+                  <For each={latencyTestHistory}>
+                    {(latencyTestResult, index) => (
+                      <li>
+                        <Show when={index() > 0}>
+                          <hr />
+                        </Show>
 
-                      <div class="timeline-start space-y-2">
-                        <time class="text-sm italic">
-                          {dayjs(latencyTestResult.time).format(
-                            'YYYY-MM-DD HH:mm:ss',
-                          )}
-                        </time>
+                        <div class="timeline-start space-y-2">
+                          <time class="text-sm italic">
+                            {dayjs(latencyTestResult.time).format(
+                              'YYYY-MM-DD HH:mm:ss',
+                            )}
+                          </time>
 
-                        <div
-                          class={twMerge(
-                            'badge block',
-                            getLatencyClassName(latencyTestResult.delay),
-                          )}
-                        >
-                          {latencyTestResult.delay || '---'}
+                          <div
+                            class={twMerge(
+                              'badge block',
+                              getLatencyClassName(latencyTestResult.delay),
+                            )}
+                          >
+                            {latencyTestResult.delay || '---'}
+                          </div>
                         </div>
-                      </div>
 
-                      <div class="timeline-middle">
-                        <IconCircleCheckFilled class="size-4" />
-                      </div>
+                        <div class="timeline-middle">
+                          <IconCircleCheckFilled class="size-4" />
+                        </div>
 
-                      <Show when={index() !== latencyTestHistory.length - 1}>
-                        <hr />
-                      </Show>
-                    </li>
-                  )}
-                </For>
-              </ul>
-            </div>
-          </Tooltip.Content>
+                        <Show when={index() !== latencyTestHistory.length - 1}>
+                          <hr />
+                        </Show>
+                      </li>
+                    )}
+                  </For>
+                </ul>
+              </div>
+            </Tooltip.Content>
+          </Show>
         </Tooltip.Portal>
       </Tooltip.Anchor>
     </Tooltip>

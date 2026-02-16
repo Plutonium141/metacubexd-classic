@@ -47,6 +47,7 @@ import {
   connectionsTableColumnVisibility,
   connectionsTableSize,
   endpoint,
+  gradientThemeColor,
   quickFilterRegex,
   setConnectionsTableColumnOrder,
   setConnectionsTableColumnVisibility,
@@ -374,13 +375,16 @@ export default () => {
       <div class="flex h-full flex-col gap-2">
         <div class="flex w-full flex-wrap items-center gap-2">
           <div class="flex items-center gap-2">
-            <div class="tabs gap-2 tabs-box tabs-sm">
+            <div class="tabs-box tabs gap-2 tabs-sm">
               <Index each={tabs()}>
                 {(tab) => (
                   <button
                     class={twMerge(
-                      activeTab() === tab().type && 'bg-primary !text-neutral',
-                      'tab gap-2 px-2',
+                      activeTab() === tab().type &&
+                        (gradientThemeColor()
+                          ? 'bg-gradient-to-br from-primary to-secondary !text-neutral'
+                          : 'bg-primary !text-neutral'),
+                      'sm:tab-md tab gap-2 px-2',
                     )}
                     onClick={() => setActiveTab(tab().type)}
                   >
@@ -404,7 +408,7 @@ export default () => {
             </div>
 
             <select
-              class="select flex-1 select-sm select-primary"
+              class="select min-w-24 flex-1 select-sm select-primary"
               onChange={(e) => setSourceIPFilter(e.target.value)}
             >
               <option value="">{t('all')}</option>
@@ -426,10 +430,10 @@ export default () => {
             </select>
           </div>
 
-          <div class="join flex flex-1 items-center">
+          <div class="join flex flex-1 items-center justify-end">
             <input
               type="search"
-              class="input input-sm join-item flex-1 input-primary"
+              class="input input-sm join-item max-w-96 flex-1 input-primary"
               placeholder={t('search')}
               onInput={(e) => setGlobalFilter(e.target.value)}
             />

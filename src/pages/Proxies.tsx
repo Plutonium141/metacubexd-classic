@@ -26,6 +26,7 @@ import {
 import { useI18n } from '~/i18n'
 import {
   endpoint,
+  gradientThemeColor,
   hideUnAvailableProxies,
   iconHeight,
   iconMarginRight,
@@ -152,12 +153,15 @@ export default () => {
 
       <div class="flex h-full flex-col gap-2">
         <div class="flex items-center gap-2">
-          <div class="tabs gap-2 tabs-box tabs-sm">
+          <div class="tabs-box tabs gap-2 tabs-sm">
             <For each={tabs()}>
               {(tab) => (
                 <button
                   class={twMerge(
-                    activeTab() === tab.type && 'bg-primary !text-neutral',
+                    activeTab() === tab.type &&
+                      (gradientThemeColor()
+                        ? 'bg-gradient-to-br from-primary to-secondary !text-neutral'
+                        : 'bg-primary !text-neutral'),
                     'sm:tab-md tab gap-2 px-2',
                   )}
                   onClick={() => setActiveTab(tab.type)}
@@ -269,7 +273,7 @@ export default () => {
                         />
                       </div>
 
-                      <div class="flex flex-wrap items-center justify-between gap-2">
+                      <div class="flex flex-wrap items-center justify-between">
                         <div class="badge badge-sm badge-primary">
                           <span class="font-bold">
                             {formatProxyType(proxyGroup.type)}
@@ -282,7 +286,7 @@ export default () => {
                           </Show>
                         </div>
 
-                        <div class="badge badge-sm badge-secondary">
+                        <div class="badge badge-soft badge-sm badge-secondary">
                           {byteSize(
                             speedGroupByName()[proxyGroup.name] ?? 0,
                           ).toString()}
@@ -352,10 +356,6 @@ export default () => {
                           <div class="badge badge-sm">
                             {proxyProvider.proxies.length}
                           </div>
-
-                          <div class="badge badge-sm">
-                            {proxyProvider.vehicleType}
-                          </div>
                         </div>
 
                         <div class="flex items-center gap-2">
@@ -407,6 +407,8 @@ export default () => {
 
                       <div class="flex flex-col gap-2">
                         <div class="text-sm text-slate-500">
+                          {proxyProvider.vehicleType}
+                          {' / '}
                           {t('updated')}{' '}
                           {formatTimeFromNow(proxyProvider.updatedAt)}
                         </div>
