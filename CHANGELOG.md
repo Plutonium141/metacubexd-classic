@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/Plutonium141/metacubexd-classic/compare/v2.0.0...v2.1.0) (2026-02-16)
+
+
+### Features
+
+* Better connection details dialog ([a6719dc](https://github.com/Plutonium141/metacubexd-classic/commit/a6719dc90a052363c54134efc25ed3427c10aa0a))
+
 ## [2.0.0](https://github.com/Plutonium141/metacubexd-classic/compare/v1.1.1...v2.0.0) (2026-02-16)
 
 
