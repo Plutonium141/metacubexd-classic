@@ -53,6 +53,7 @@ export default {
   off: 'Выключено',
   proxiesPreviewType: 'Тип предварительного просмотра прокси',
   urlForLatencyTest: 'URL для теста задержки',
+  enableUDPIndicator: 'Показать индикатор UDP',
   autoCloseConns: 'Автоматически закрывать соединения',
   autoSwitchTheme: 'Автоматически переключать тему',
   favDayTheme: 'Предпочитаемая светлая тема',

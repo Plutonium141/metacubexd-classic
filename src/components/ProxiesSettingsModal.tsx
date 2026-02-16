@@ -121,6 +121,19 @@ export const ProxiesSettingsModal: Component<{
         </div>
 
         <div>
+          <ConfigTitle withDivider>{t('enableUDPIndicator')}</ConfigTitle>
+
+          <div class="flex w-full justify-center">
+            <input
+              class="toggle"
+              type="checkbox"
+              checked={enableUDPIndicator()}
+              onChange={(e) => setEnableUDPIndicator(e.target.checked)}
+            />
+          </div>
+        </div>
+
+        <div>
           <ConfigTitle withDivider>{t('proxiesPreviewType')}</ConfigTitle>
 
           <select

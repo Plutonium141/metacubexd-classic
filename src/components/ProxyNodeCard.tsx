@@ -8,7 +8,7 @@ import {
   formatProxyType,
   getLatencyClassName,
 } from '~/helpers'
-import { rootElement, useProxies } from '~/signals'
+import { enableUDPIndicator, rootElement, useProxies } from '~/signals'
 
 export const ProxyNodeCard = (props: {
   proxyName: string
@@ -66,7 +66,7 @@ export const ProxyNodeCard = (props: {
         )}
         title={title()}
       >
-        <Show when={isUDP()}>
+        <Show when={isUDP() && enableUDPIndicator()}>
           <div class="indicator-item badge badge-xs badge-info">U</div>
         </Show>
 

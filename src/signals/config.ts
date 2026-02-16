@@ -54,7 +54,7 @@ export const [urlForLatencyTest, setUrlForLatencyTest] = makePersisted(
   { name: 'urlForLatencyTest', storage: localStorage },
 )
 
-export const autoCloseConnsDefault = true
+export const autoCloseConnsDefault = false
 
 export const [autoCloseConns, setAutoCloseConns] = makePersisted(
   createSignal(autoCloseConnsDefault),
@@ -146,7 +146,7 @@ export const [logsTableSize, setLogsTableSize] = makePersisted(
   { name: 'logsTableSize', storage: localStorage },
 )
 
-export const logLevelDefault = LOG_LEVEL.Info
+export const logLevelDefault = LOG_LEVEL.Warning
 
 export const [logLevel, setLogLevel] = makePersisted(
   createSignal(logLevelDefault),
@@ -184,7 +184,7 @@ export const tableSizeClassName = (size: TAILWINDCSS_SIZE) => {
   return className
 }
 
-export const latencyTestTimeoutDurationDefault = 5000
+export const latencyTestTimeoutDurationDefault = 2000
 
 export const [latencyTestTimeoutDuration, setLatencyTestTimeoutDuration] =
   makePersisted(createSignal(latencyTestTimeoutDurationDefault), {
@@ -213,4 +213,11 @@ export const iconMarginRightDefault = 8
 export const [iconMarginRight, setIconMarginRight] = makePersisted(
   createSignal(iconMarginRightDefault),
   { name: 'iconMarginRight', storage: localStorage },
+)
+
+export const enableUDPIndicatorDefault = true
+
+export const [enableUDPIndicator, setEnableUDPIndicator] = makePersisted(
+  createSignal(enableUDPIndicatorDefault),
+  { name: 'enableUDPIndicator', storage: localStorage },
 )

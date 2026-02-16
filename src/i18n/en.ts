@@ -51,6 +51,7 @@ export default {
   off: 'Off',
   proxiesPreviewType: 'Proxies Preview Type',
   urlForLatencyTest: 'URL for Latency Test',
+  enableUDPIndicator: 'Enable UDP Indicator',
   autoCloseConns: 'Automatically Close Connections',
   autoSwitchTheme: 'Automatically switch theme',
   favDayTheme: 'Favorite light theme',

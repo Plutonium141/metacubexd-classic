@@ -53,6 +53,7 @@ export default {
   off: '关闭',
   proxiesPreviewType: '节点组预览样式',
   urlForLatencyTest: '测速链接',
+  enableUDPIndicator: '启用 UDP 指示器',
   autoCloseConns: '自动断开连接',
   autoSwitchTheme: '自动切换主题',
   favDayTheme: '浅色主题偏好',
