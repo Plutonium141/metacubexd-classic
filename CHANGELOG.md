@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/Plutonium141/metacubexd-classic/compare/v1.1.1...v2.0.0) (2026-02-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* Modify layout
+
+### Features
+
+* Modify layout ([b1cf365](https://github.com/Plutonium141/metacubexd-classic/commit/b1cf365fb78aaa220f5665aa68ef81ac5ab3c99f))
+
 ## [1.1.1](https://github.com/Plutonium141/metacubexd-classic/compare/v1.1.0...v1.1.1) (2026-02-16)
 
 
