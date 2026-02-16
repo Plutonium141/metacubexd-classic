@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Plutonium141/metacubexd-classic/compare/v1.1.0...v1.1.1) (2026-02-16)
+
+
+### Bug Fixes
+
+* EnableUDPIndicator ([8ca1780](https://github.com/Plutonium141/metacubexd-classic/commit/8ca1780a5ddcc45b5e800c4a906aad56da0b0eee))
+
 ## [1.1.0](https://github.com/Plutonium141/metacubexd-classic/compare/v1.0.0...v1.1.0) (2026-02-16)
 
 
