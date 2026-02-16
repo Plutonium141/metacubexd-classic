@@ -80,7 +80,7 @@
     "vite-plugin-solid": "^2.11.8",
     "zod": "^4.1.11"
   },
-  "packageManager": "pnpm@10.17.0",
+  "packageManager": "pnpm@10.29.3",
   "pnpm": {
     "overrides": {
       "vite": "npm:rolldown-vite@latest"
