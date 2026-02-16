@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Plutonium141/metacubexd-classic/compare/v1.0.0...v1.1.0) (2026-02-16)
+
+
+### Features
+
+* allow disabling the UDP indicator ([29d7abc](https://github.com/Plutonium141/metacubexd-classic/commit/29d7abcacfa495ab147f277f7599d8f8d9e43cdf))
+
 ## 1.0.0 (2026-02-01)
 
 
