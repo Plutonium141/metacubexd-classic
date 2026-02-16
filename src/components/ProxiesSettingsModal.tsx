@@ -5,6 +5,7 @@ import { PROXIES_ORDERING_TYPE, PROXIES_PREVIEW_TYPE } from '~/constants'
 import { useI18n } from '~/i18n'
 import {
   autoCloseConns,
+  enableUDPIndicator,
   hideUnAvailableProxies,
   iconHeight,
   iconMarginRight,
@@ -13,6 +14,7 @@ import {
   proxiesPreviewType,
   renderProxiesInTwoColumns,
   setAutoCloseConns,
+  setEnableUDPIndicator,
   setHideUnAvailableProxies,
   setIconHeight,
   setIconMarginRight,
