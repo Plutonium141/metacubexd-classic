@@ -5,6 +5,14 @@
   themes: all;
 }
 
+@utility table-title {
+  @apply text-base-content/60;
+}
+
+@utility table-content {
+  @apply min-w-0 font-mono break-all text-base-content;
+}
+
 @theme {
   --font-fira-sans: FiraSans, 'Twemoji Mozilla', system-ui, monospace;
   --font-system-ui: 'Twemoji Mozilla', system-ui, monospace;

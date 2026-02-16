@@ -46,7 +46,7 @@ export enum ROUTES {
   Setup = '/setup',
 }
 
-export const CHART_MAX_XAXIS = 10
+export const CHART_MAX_XAXIS = 20
 
 export const DEFAULT_CHART_OPTIONS: ApexOptions = {
   title: { align: 'center', style: { color: 'gray', fontSize: '16px' } },

@@ -89,8 +89,11 @@ export type ConnectionRawMessage = {
     network: string
     type: string
     destinationIP: string
+    destinationGeoIP: string
+    destinationIPASN: string
     destinationPort: string
     dnsMode: string
+    dscp: number
     host: string
     inboundIP: string
     inboundName: string
@@ -101,6 +104,8 @@ export type ConnectionRawMessage = {
     remoteDestination: string
     sniffHost: string
     sourceIP: string
+    sourceGeoIP: string
+    sourceIPASN: string
     sourcePort: string
     specialProxy: string
     specialRules: string

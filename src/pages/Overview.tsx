@@ -4,6 +4,7 @@ import byteSize from 'byte-size'
 import { defaultsDeep } from 'lodash'
 import { SolidApexCharts } from 'solid-apexcharts'
 import type { JSX, ParentComponent } from 'solid-js'
+import { twMerge } from 'tailwind-merge'
 import { DocumentTitle } from '~/components'
 import { CHART_MAX_XAXIS, DEFAULT_CHART_OPTIONS } from '~/constants'
 import { useI18n } from '~/i18n'
@@ -119,7 +120,9 @@ export default () => {
         <div
           class={twMerge(
             'stats w-full flex-shrink-0 stats-vertical grid-cols-2 shadow lg:flex lg:stats-horizontal',
-            gradientThemeColor() ? 'bg-gradient-to-br from-primary to-secondary' : 'bg-primary'
+            gradientThemeColor()
+              ? 'bg-gradient-to-br from-primary to-secondary'
+              : 'bg-primary'
           )}
         >
           <TrafficWidget label={t('upload')}>
