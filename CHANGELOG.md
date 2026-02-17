@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/Plutonium141/metacubexd-classic/compare/v2.1.0...v2.1.1) (2026-02-17)
+
+
+### Bug Fixes
+
+* style ([4139a77](https://github.com/Plutonium141/metacubexd-classic/commit/4139a7751d59a45ffa16da481029ca5b39ca2d9e))
+
 ## [2.1.0](https://github.com/Plutonium141/metacubexd-classic/compare/v2.0.0...v2.1.0) (2026-02-16)
 
 
