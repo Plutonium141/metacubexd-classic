@@ -93,7 +93,7 @@ export const ProxyNodeCard = (props: {
 
             <div class="card-actions items-end justify-between gap-1">
               <div class="flex flex-col gap-0.5 ps-0.5">
-                <div class="text-xs font-semibold uppercase italic opacity-75">
+                <div class="text-xs uppercase italic opacity-75">
                   {formatProxyType(proxyNode()?.type)}
                 </div>
               </div>

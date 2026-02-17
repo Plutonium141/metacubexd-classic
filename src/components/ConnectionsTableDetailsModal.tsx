@@ -10,7 +10,7 @@ import {
 import byteSize from 'byte-size'
 import type { Component } from 'solid-js'
 import { Modal } from '~/components'
-import { formatTime, formatTimeFromNow } from '~/helpers'
+import { formatIPv6, formatTime, formatTimeFromNow } from '~/helpers'
 import { useI18n } from '~/i18n'
 import { allConnections, useConnections } from '~/signals'
 
@@ -54,14 +54,15 @@ export const ConnectionsTableDetailsModal: Component<{
                 <div class="table-content">
                   {conn()?.metadata.host ||
                     conn()?.metadata.sniffHost ||
-                    conn()?.metadata.destinationIP}
+                    formatIPv6(conn()?.metadata.destinationIP || '')}
                   {':'}
                   {conn()?.metadata.destinationPort}
                 </div>
 
                 <div class="table-title">{t('destination')}</div>
                 <div class="table-content">
-                  {conn()?.metadata.destinationIP || t('unknown')}
+                  {formatIPv6(conn()?.metadata.destinationIP || '') ||
+                    t('unknown')}
                 </div>
 
                 <div class="table-title">{t('geoip')}</div>
@@ -79,20 +80,14 @@ export const ConnectionsTableDetailsModal: Component<{
           </div>
 
           <div class="grid grid-cols-3 items-center justify-items-stretch px-8">
-            <div class="justify-self-start">
-              <div>
-                {t('upload')} : {byteSize(uploadSpeed()).toString()}/s
-              </div>
-              <div></div>
+            <div class="justify-self-start text-sm">
+              {t('upload')} : {byteSize(uploadSpeed()).toString()}/s
             </div>
             <div class="justify-self-center">
               <IconArrowsSort size={48} />
             </div>
-            <div class="justify-self-end">
-              <div>
-                {t('download')} : {byteSize(downloadSpeed()).toString()}/s
-              </div>
-              <div></div>
+            <div class="justify-self-end text-sm">
+              {t('download')} : {byteSize(downloadSpeed()).toString()}/s
             </div>
           </div>
 
@@ -106,7 +101,8 @@ export const ConnectionsTableDetailsModal: Component<{
                 <Show when={conn()?.metadata.type != 'Inner'}>
                   <div class="table-title">{t('sourceIP')}</div>
                   <div class="table-content">
-                    {conn()?.metadata.sourceIP}:{conn()?.metadata.sourcePort}
+                    {formatIPv6(conn()?.metadata.sourceIP || '')}:
+                    {conn()?.metadata.sourcePort}
                   </div>
 
                   <div class="table-title">{t('geoip')}</div>
@@ -124,7 +120,7 @@ export const ConnectionsTableDetailsModal: Component<{
                   <div class="table-title">{t('inboundIP')}</div>
                   <div class="table-content">
                     {conn()?.metadata.inboundIP !== '::'
-                      ? conn()?.metadata.inboundIP
+                      ? formatIPv6(conn()?.metadata.inboundIP || '')
                       : '0.0.0.0'}
                     :{conn()?.metadata.inboundPort}
                   </div>
@@ -153,9 +149,8 @@ export const ConnectionsTableDetailsModal: Component<{
                 <div class="table-title">{t('connectStartTime')}</div>
                 <div class="table-content">
                   {formatTime(conn()?.start || '')}
-                  {' ('}
+                  <br />
                   {formatTimeFromNow(conn()?.start || '')}
-                  {') '}
                 </div>
               </div>
             </div>
