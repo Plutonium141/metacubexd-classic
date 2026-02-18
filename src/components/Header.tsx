@@ -83,12 +83,14 @@ const MobileBottomNav = () => {
 
   createEffect(() => {
     const shouldShow = location.pathname !== ROUTES.Setup
-    document.body.style.paddingBottom =
-      shouldShow && window.innerWidth < 1024 ? '4rem' : '0'
+
+    if (shouldShow) {
+      document.getElementById('app')!.classList.add('pb-16', 'lg:pb-0')
+    }
   })
 
   onCleanup(() => {
-    document.body.style.paddingBottom = '0'
+    document.getElementById('app')!.classList.remove('pb-16', 'lg:pb-0')
   })
 
   return (
@@ -137,7 +139,7 @@ export const Header = () => {
 
   return (
     <>
-      <header class="z-50 navbar flex w-auto items-center justify-center bg-base-300 px-4 shadow-lg">
+      <header class="navbar z-50 flex w-auto items-center justify-center bg-base-300 px-4 shadow-lg">
         <div class="navbar-start">
           <LogoText />
         </div>

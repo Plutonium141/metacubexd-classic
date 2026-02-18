@@ -34,6 +34,7 @@ export const App: ParentComponent = ({ children }) => {
 
   return (
     <div
+      id="app"
       ref={(el) => setRootElement(el)}
       class={twMerge(
         'relative flex h-screen flex-col overscroll-y-none bg-base-100 subpixel-antialiased',
