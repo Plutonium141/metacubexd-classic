@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://github.com/Plutonium141/metacubexd-classic/compare/v2.1.1...v2.2.0) (2026-02-18)
+
+
+### Features
+
+* flush DNS cache ([7df258a](https://github.com/Plutonium141/metacubexd-classic/commit/7df258a9e9b916f9465737bb0d391db8a051488c))
+
+
+### Bug Fixes
+
+* fix the page overflow caused by the bottom navigation bar ([0c6fc0d](https://github.com/Plutonium141/metacubexd-classic/commit/0c6fc0d0e5e1fd4f67af85cb239826899f71ad2e))
+
 ## [2.1.1](https://github.com/Plutonium141/metacubexd-classic/compare/v2.1.0...v2.1.1) (2026-02-17)
 
 
