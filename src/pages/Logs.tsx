@@ -130,42 +130,44 @@ export default () => {
       <DocumentTitle>{t('logs')}</DocumentTitle>
 
       <div class="flex h-full flex-col gap-2">
-        <div class="join w-full justify-end">
-          <input
-            type="search"
-            class="input input-sm join-item max-w-96 flex-1 flex-shrink-0 input-primary"
-            placeholder={t('search')}
-            onInput={(e) => setGlobalFilter(e.target.value)}
-          />
+        <div class="flex justify-end">
+          <div class="join w-full py-1 md:max-w-100">
+            <input
+              type="search"
+              class="input input-sm join-item flex-1 flex-shrink-0 input-primary"
+              placeholder={t('search')}
+              onInput={(e) => setGlobalFilter(e.target.value)}
+            />
 
-          <select
-            class="select join-item w-24 select-sm input-primary"
-            value={logLevel()}
-            onChange={(e) => setLogLevel(e.target.value as LOG_LEVEL)}
-          >
-            <For
-              each={[
-                LOG_LEVEL.Info,
-                LOG_LEVEL.Error,
-                LOG_LEVEL.Warning,
-                LOG_LEVEL.Debug,
-                LOG_LEVEL.Silent,
-              ]}
+            <select
+              class="select join-item w-auto select-sm input-primary"
+              value={logLevel()}
+              onChange={(e) => setLogLevel(e.target.value as LOG_LEVEL)}
             >
-              {(level) => <option value={level}>{t(level)}</option>}
-            </For>
-          </select>
+              <For
+                each={[
+                  LOG_LEVEL.Info,
+                  LOG_LEVEL.Error,
+                  LOG_LEVEL.Warning,
+                  LOG_LEVEL.Debug,
+                  LOG_LEVEL.Silent,
+                ]}
+              >
+                {(level) => <option value={level}>{t(level)}</option>}
+              </For>
+            </select>
 
-          <Button
-            class="join-item btn-sm btn-primary"
-            onClick={() => setPaused((paused) => !paused)}
-            icon={paused() ? <IconPlayerPlay /> : <IconPlayerPause />}
-          />
-          <Button
-            class="join-item btn-sm btn-primary"
-            onClick={() => logsSettingsModalRef?.showModal()}
-            icon={<IconSettings />}
-          />
+            <Button
+              class="join-item btn-sm btn-primary"
+              onClick={() => setPaused((paused) => !paused)}
+              icon={paused() ? <IconPlayerPlay /> : <IconPlayerPause />}
+            />
+            <Button
+              class="join-item btn-sm btn-primary"
+              onClick={() => logsSettingsModalRef?.showModal()}
+              icon={<IconSettings />}
+            />
+          </div>
         </div>
 
         <div class="overflow-x-auto rounded-md bg-base-300 whitespace-nowrap">

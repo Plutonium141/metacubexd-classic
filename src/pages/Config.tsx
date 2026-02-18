@@ -378,7 +378,7 @@ const ConfigForm: ParentComponent<{
         </form>
       </Show>
 
-      <div class="grid grid-cols-2 gap-4 sm:grid-cols-2">
+      <div class="grid grid-cols-2 gap-2 md:grid-cols-3">
         <Button
           class="btn-primary"
           loading={reloadingConfigFile()}

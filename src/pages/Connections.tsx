@@ -430,53 +430,55 @@ export default () => {
             </select>
           </div>
 
-          <div class="join flex flex-1 items-center justify-end">
-            <input
-              type="search"
-              class="input input-sm join-item max-w-96 flex-1 input-primary"
-              placeholder={t('search')}
-              onInput={(e) => setGlobalFilter(e.target.value)}
-            />
+          <div class="flex flex-1 items-center justify-end">
+            <div class="join w-full md:max-w-100">
+              <input
+                type="search"
+                class="input input-sm join-item min-w-20 flex-1 input-primary"
+                placeholder={t('search')}
+                onInput={(e) => setGlobalFilter(e.target.value)}
+              />
 
-            <Button
-              class="btn join-item btn-sm btn-primary"
-              onClick={() => setPaused((paused) => !paused)}
-              icon={paused() ? <IconPlayerPlay /> : <IconPlayerPause />}
-            />
+              <Button
+                class="btn join-item btn-sm btn-primary"
+                onClick={() => setPaused((paused) => !paused)}
+                icon={paused() ? <IconPlayerPlay /> : <IconPlayerPause />}
+              />
 
-            <Button
-              class="btn join-item btn-sm btn-primary"
-              onClick={async () => {
-                setIsClosingConnections(true)
+              <Button
+                class="btn join-item btn-sm btn-primary"
+                onClick={async () => {
+                  setIsClosingConnections(true)
 
-                if (table.getState().globalFilter) {
-                  await Promise.allSettled(
-                    table
-                      .getFilteredRowModel()
-                      .rows.map(({ original }) =>
-                        closeSingleConnectionAPI(original.id),
-                      ),
+                  if (table.getState().globalFilter) {
+                    await Promise.allSettled(
+                      table
+                        .getFilteredRowModel()
+                        .rows.map(({ original }) =>
+                          closeSingleConnectionAPI(original.id),
+                        ),
+                    )
+                  } else {
+                    await closeAllConnectionsAPI()
+                  }
+
+                  setIsClosingConnections(false)
+                }}
+                icon={
+                  isClosingConnections() ? (
+                    <div class="loading loading-spinner" />
+                  ) : (
+                    <IconX />
                   )
-                } else {
-                  await closeAllConnectionsAPI()
                 }
+              />
 
-                setIsClosingConnections(false)
-              }}
-              icon={
-                isClosingConnections() ? (
-                  <div class="loading loading-spinner" />
-                ) : (
-                  <IconX />
-                )
-              }
-            />
-
-            <Button
-              class="btn join-item btn-sm btn-primary"
-              onClick={() => connectionsSettingsModalRef?.showModal()}
-              icon={<IconSettings />}
-            />
+              <Button
+                class="btn join-item btn-sm btn-primary"
+                onClick={() => connectionsSettingsModalRef?.showModal()}
+                icon={<IconSettings />}
+              />
+            </div>
           </div>
         </div>
 

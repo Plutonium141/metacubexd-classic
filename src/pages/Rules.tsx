@@ -166,7 +166,7 @@ export default () => {
 
           <div class="join flex flex-1 items-center justify-end">
             <input
-              class="input input-sm join-item flex-1 input-primary max-w-96"
+              class="input input-sm join-item flex-1 input-primary md:max-w-100"
               type="search"
               placeholder={t('search')}
               value={globalFilter()}
