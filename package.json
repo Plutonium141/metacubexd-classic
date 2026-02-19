@@ -61,7 +61,7 @@
     "lint-staged": "^16.2.7",
     "lodash": "^4.17.23",
     "markdown-it": "^14.1.1",
-    "match-sorter": "^8.1.0",
+    "match-sorter": "^8.2.0",
     "prettier": "^3.6.2",
     "prettier-plugin-organize-imports": "^4.3.0",
     "prettier-plugin-tailwindcss": "^0.6.14",
