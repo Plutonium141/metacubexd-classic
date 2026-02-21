@@ -218,6 +218,9 @@ export const proxyLatencyTestAPI = (
         url,
         timeout,
       },
+      retry: {
+        limit: 0,
+      }
     })
     .json<{ delay: number }>()
 }
@@ -235,6 +238,9 @@ export const proxyGroupLatencyTestAPI = (
         url,
         timeout,
       },
+      retry: {
+        limit: 0,
+      }
     })
     .json<Record<string, number>>()
 }
