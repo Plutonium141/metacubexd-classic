@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/Plutonium141/metacubexd-classic/compare/v2.2.0...v2.2.1) (2026-02-21)
+
+
+### Bug Fixes
+
+* Do not retry after a delay test fails ([f03be8f](https://github.com/Plutonium141/metacubexd-classic/commit/f03be8fce85dce6f28ff32985eb86c8256e0ed0c))
+
 ## [2.2.0](https://github.com/Plutonium141/metacubexd-classic/compare/v2.1.1...v2.2.0) (2026-02-18)
 
 
