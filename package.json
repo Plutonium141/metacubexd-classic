@@ -35,7 +35,7 @@
     "@solidjs/router": "^0.15.4",
     "@tabler/icons-solidjs": "^3.36.1",
     "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.2.0",
+    "@tailwindcss/vite": "^4.2.1",
     "@tanstack/match-sorter-utils": "^8.19.4",
     "@tanstack/solid-table": "^8.21.3",
     "@tanstack/solid-virtual": "^3.13.18",
