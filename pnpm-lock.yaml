@@ -111,8 +111,8 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2
       apexcharts:
-        specifier: ^5.6.0
-        version: 5.6.0
+        specifier: ^5.10.3
+        version: 5.10.3
       byte-size:
         specifier: ^9.0.1
         version: 9.0.1
@@ -166,7 +166,7 @@ importers:
         version: 0.7.2(prettier-plugin-organize-imports@4.3.0(prettier@3.8.1)(typescript@5.9.3))(prettier@3.8.1)
       solid-apexcharts:
         specifier: ^0.6.0
-        version: 0.6.0(apexcharts@5.6.0)(solid-js@1.9.11)
+        version: 0.6.0(apexcharts@5.10.3)(solid-js@1.9.11)
       solid-js:
         specifier: ^1.9.11
         version: 1.9.11
@@ -1593,8 +1593,8 @@ packages:
     resolution: {integrity: sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg==}
     engines: {node: '>=12'}
 
-  apexcharts@5.6.0:
-    resolution: {integrity: sha512-BZua59yedRsaDfnxkzNrkyLCvluq2c3ZDBIz4joxSKtgr0xDQXQ5dzceMhf/TpTbAjaF+2NYIpLP3BEEIG2s/w==}
+  apexcharts@5.10.3:
+    resolution: {integrity: sha512-wwvkSLsodNOc/rHo5MJsn3GPM4Krc5Gs0zKX4Lfzq4LohcTbyKylYUGEqJFmXXxGR7yLbZQz31sB5RTqT5mv1g==}
 
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
@@ -2990,6 +2990,7 @@ packages:
   rolldown-vite@7.3.1:
     resolution: {integrity: sha512-LYzdNAjRHhF2yA4JUQm/QyARyi216N2rpJ0lJZb8E9FU2y5v6Vk+xq/U4XBOxMefpWixT5H3TslmAHm1rqIq2w==}
     engines: {node: ^20.19.0 || >=22.12.0}
+    deprecated: Use this package to migrate from Vite 7 to Vite 8. For the most recent updates, migrate to Vite 8 once you're ready.
     hasBin: true
     peerDependencies:
       '@types/node': ^20.19.0 || >=22.12.0
@@ -5108,7 +5109,7 @@ snapshots:
 
   ansi-styles@6.2.3: {}
 
-  apexcharts@5.6.0:
+  apexcharts@5.10.3:
     dependencies:
       '@yr/monotone-cubic-spline': 1.0.3
 
@@ -6596,9 +6597,9 @@ snapshots:
 
   smob@1.6.1: {}
 
-  solid-apexcharts@0.6.0(apexcharts@5.6.0)(solid-js@1.9.11):
+  solid-apexcharts@0.6.0(apexcharts@5.10.3)(solid-js@1.9.11):
     dependencies:
-      apexcharts: 5.6.0
+      apexcharts: 5.10.3
       defu: 6.1.4
       solid-js: 1.9.11
 
