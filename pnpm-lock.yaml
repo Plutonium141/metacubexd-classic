@@ -36,8 +36,8 @@ importers:
         specifier: ^5.2.7
         version: 5.2.7
       '@solid-primitives/clipboard':
-        specifier: ^1.6.2
-        version: 1.6.2(solid-js@1.9.11)
+        specifier: ^1.6.4
+        version: 1.6.4(solid-js@1.9.11)
       '@solid-primitives/context':
         specifier: ^0.3.2
         version: 0.3.2(solid-js@1.9.11)
@@ -1207,8 +1207,8 @@ packages:
     resolution: {integrity: sha512-KxXvfapcixpz6rVEB6HPjOUZT22yN6v0vI0urQSk1L8MlEWPDFCZkhw2xmkyoTGYeFw7tWTZd7e3lVzRZRN/EA==}
     engines: {node: '>=18'}
 
-  '@solid-primitives/clipboard@1.6.2':
-    resolution: {integrity: sha512-lJHjyjjOFNcPFmLanY9+dShS1OwJUVuaJneSQNEm4yDrJ1t6eY8JKEslSVcTQDoNzVvNPDLHHm3/q4uGXsB14A==}
+  '@solid-primitives/clipboard@1.6.4':
+    resolution: {integrity: sha512-96SbTfLRKLtKZNTcurIqbjoJIxo/DieP9qaqJDBQEFG/U8WbTHGUAQksBKB8VYmHz4X3GWU4mf4UbQ9VH8Biow==}
     peerDependencies:
       solid-js: ^1.6.12
 
@@ -1261,11 +1261,6 @@ packages:
 
   '@solid-primitives/timer@1.4.4':
     resolution: {integrity: sha512-Ayjyb3+v1hyU92vuLUN0tVHq2mmTCPGxSDLGJMsDydRqx9ZfJIc9xj6cxK4XvdY3pif3ps2mIv52pjgToybEpQ==}
-    peerDependencies:
-      solid-js: ^1.6.12
-
-  '@solid-primitives/utils@6.3.2':
-    resolution: {integrity: sha512-hZ/M/qr25QOCcwDPOHtGjxTD8w2mNyVAYvcfgwzBHq2RwNqHNdDNsMZYap20+ruRwW4A3Cdkczyoz0TSxLCAPQ==}
     peerDependencies:
       solid-js: ^1.6.12
 
@@ -2990,6 +2985,7 @@ packages:
   rolldown-vite@7.3.1:
     resolution: {integrity: sha512-LYzdNAjRHhF2yA4JUQm/QyARyi216N2rpJ0lJZb8E9FU2y5v6Vk+xq/U4XBOxMefpWixT5H3TslmAHm1rqIq2w==}
     engines: {node: ^20.19.0 || >=22.12.0}
+    deprecated: Use this package to migrate from Vite 7 to Vite 8. For the most recent updates, migrate to Vite 8 once you're ready.
     hasBin: true
     peerDependencies:
       '@types/node': ^20.19.0 || >=22.12.0
@@ -4727,9 +4723,9 @@ snapshots:
 
   '@simple-libs/stream-utils@1.2.0': {}
 
-  '@solid-primitives/clipboard@1.6.2(solid-js@1.9.11)':
+  '@solid-primitives/clipboard@1.6.4(solid-js@1.9.11)':
     dependencies:
-      '@solid-primitives/utils': 6.3.2(solid-js@1.9.11)
+      '@solid-primitives/utils': 6.4.0(solid-js@1.9.11)
       solid-js: 1.9.11
 
   '@solid-primitives/context@0.3.2(solid-js@1.9.11)':
@@ -4777,10 +4773,6 @@ snapshots:
       solid-js: 1.9.11
 
   '@solid-primitives/timer@1.4.4(solid-js@1.9.11)':
-    dependencies:
-      solid-js: 1.9.11
-
-  '@solid-primitives/utils@6.3.2(solid-js@1.9.11)':
     dependencies:
       solid-js: 1.9.11
 
