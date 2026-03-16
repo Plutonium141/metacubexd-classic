@@ -69,8 +69,8 @@ importers:
         specifier: ^0.15.4
         version: 0.15.4(solid-js@1.9.11)
       '@tabler/icons-solidjs':
-        specifier: ^3.36.1
-        version: 3.36.1(solid-js@1.9.11)
+        specifier: ^3.40.0
+        version: 3.40.0(solid-js@1.9.11)
       '@tailwindcss/typography':
         specifier: ^0.5.19
         version: 0.5.19(tailwindcss@4.2.0)
@@ -1287,13 +1287,13 @@ packages:
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
 
-  '@tabler/icons-solidjs@3.36.1':
-    resolution: {integrity: sha512-lf1oJ0+S8xDVX4AojJXQk4LmHHidzrrhaxtbfsaKLaDuHHuXytJ8qBLfg3k/FceRWLJbh0HQH+vr9evLbC1lpA==}
+  '@tabler/icons-solidjs@3.40.0':
+    resolution: {integrity: sha512-xhHKmZhERZnfKfG11iR3fKtij7diBVWpHrfleJjbnMwtm0pfPxIqo/6Y3qUSM+pPJYBFsRiFTMIlbHepTLywxQ==}
     peerDependencies:
       solid-js: ^1.4.7
 
-  '@tabler/icons@3.36.1':
-    resolution: {integrity: sha512-f4Jg3Fof/Vru5ioix/UO4GX+sdDsF9wQo47FbtvG+utIYYVQ/QVAC0QYgcBbAjQGfbdOh2CCf0BgiFOF9Ixtjw==}
+  '@tabler/icons@3.40.0':
+    resolution: {integrity: sha512-V/Q4VgNPKubRTiLdmWjV/zscYcj5IIk+euicUtaVVqF6luSC9rDngYWgST5/yh3Mrg/mYUwRv1YVTk71Jp0twQ==}
 
   '@tailwindcss/node@4.2.1':
     resolution: {integrity: sha512-jlx6sLk4EOwO6hHe1oCGm1Q4AN/s0rSrTTPBGPM0/RQ6Uylwq17FuU8IeJJKEjtc6K6O07zsvP+gDO6MMWo7pg==}
@@ -4804,12 +4804,12 @@ snapshots:
       magic-string: 0.25.9
       string.prototype.matchall: 4.0.12
 
-  '@tabler/icons-solidjs@3.36.1(solid-js@1.9.11)':
+  '@tabler/icons-solidjs@3.40.0(solid-js@1.9.11)':
     dependencies:
-      '@tabler/icons': 3.36.1
+      '@tabler/icons': 3.40.0
       solid-js: 1.9.11
 
-  '@tabler/icons@3.36.1': {}
+  '@tabler/icons@3.40.0': {}
 
   '@tailwindcss/node@4.2.1':
     dependencies:
