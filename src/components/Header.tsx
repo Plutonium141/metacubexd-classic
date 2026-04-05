@@ -99,7 +99,15 @@ const MobileBottomNav = () => {
         <div class="grid h-16 grid-cols-6">
           <For each={navs}>
             {({ href, name, icon }) => {
-              const isActive = () => location.pathname === href
+              const isActive = () => {
+                if (location.pathname === href) {
+                  return true
+                }
+
+                if (href === ROUTES.Overview && location.pathname === '/') {
+                  return true
+                }
+              }
 
               return (
                 <A
