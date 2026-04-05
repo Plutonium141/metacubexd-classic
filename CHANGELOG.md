@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/Plutonium141/metacubexd-classic/compare/v2.2.1...v2.2.2) (2026-04-05)
+
+
+### Bug Fixes
+
+* overview page in the navigation bar sometimes doesn't activate and revert the previous incorrect commit ([d68ca1a](https://github.com/Plutonium141/metacubexd-classic/commit/d68ca1a83345454c9bdcb3ae205290492dd5c327))
+
 ## [2.2.1](https://github.com/Plutonium141/metacubexd-classic/compare/v2.2.0...v2.2.1) (2026-02-21)
 
 
