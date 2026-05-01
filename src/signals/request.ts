@@ -40,7 +40,7 @@ export const useRequest = () => {
   }
 
   return ky.create({
-    prefixUrl: e.url,
+    prefix: e.url,
     headers,
   })
 }
@@ -53,7 +53,7 @@ export const useGithubAPI = () => {
   }
 
   return ky.create({
-    prefixUrl: 'https://api.github.com',
+    prefix: 'https://api.github.com',
     headers,
   })
 }
