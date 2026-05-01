@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.4](https://github.com/Plutonium141/metacubexd-classic/compare/v2.2.3...v2.2.4) (2026-05-01)
+
+
+### Bug Fixes
+
+* Downgrade apexcharts to version 5.10.3 ([131f989](https://github.com/Plutonium141/metacubexd-classic/commit/131f9890e0c96d41a1f923f330410ede5bd997f9))
+* Downgrade apexcharts version ([561168f](https://github.com/Plutonium141/metacubexd-classic/commit/561168fd08f19130f444349557e914538ecdd18f))
+
 ## [2.2.3](https://github.com/Plutonium141/metacubexd-classic/compare/v2.2.2...v2.2.3) (2026-05-01)
 
 
