@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.3](https://github.com/Plutonium141/metacubexd-classic/compare/v2.2.2...v2.2.3) (2026-05-01)
+
+
+### Bug Fixes
+
+* ky client configuration from prefixUrl to prefix ([0289a4d](https://github.com/Plutonium141/metacubexd-classic/commit/0289a4d2243260a68fa8e251296a7bb18a49b90b))
+
 ## [2.2.2](https://github.com/Plutonium141/metacubexd-classic/compare/v2.2.1...v2.2.2) (2026-04-05)
 
 
