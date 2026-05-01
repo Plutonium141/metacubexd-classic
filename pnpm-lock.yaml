@@ -31,7 +31,7 @@ importers:
         version: 1.2.14(solid-js@1.9.12)
       '@felte/validator-zod':
         specifier: ^1.0.18
-        version: 1.0.18(zod@4.3.6)
+        version: 1.0.18(zod@4.4.1)
       '@fontsource/fira-sans':
         specifier: ^5.2.7
         version: 5.2.7
@@ -204,8 +204,8 @@ importers:
         specifier: ^2.11.12
         version: 2.11.12(rolldown-vite@7.3.1(@types/node@25.6.0)(jiti@2.6.1)(terser@5.46.2)(yaml@2.8.2))(solid-js@1.9.12)
       zod:
-        specifier: ^4.3.6
-        version: 4.3.6
+        specifier: ^4.4.1
+        version: 4.4.1
 
 packages:
 
@@ -3643,8 +3643,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  zod@4.3.6:
-    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
+  zod@4.4.1:
+    resolution: {integrity: sha512-a6ENMBBGZBsnlSebQ/eKCguSBeGKSf4O7BPnqVPmYGtpBYI7VSqoVqw+QcB7kPRjbqPwhYTpFbVj/RqNz/CT0Q==}
 
 snapshots:
 
@@ -4539,10 +4539,10 @@ snapshots:
       '@felte/core': 1.4.4
       solid-js: 1.9.12
 
-  '@felte/validator-zod@1.0.18(zod@4.3.6)':
+  '@felte/validator-zod@1.0.18(zod@4.4.1)':
     dependencies:
       '@felte/common': 1.1.9
-      zod: 4.3.6
+      zod: 4.4.1
 
   '@floating-ui/core@1.7.2':
     dependencies:
@@ -7273,4 +7273,4 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod@4.3.6: {}
+  zod@4.4.1: {}
