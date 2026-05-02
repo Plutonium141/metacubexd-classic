@@ -42,7 +42,7 @@ importers:
         specifier: ^0.3.2
         version: 0.3.2(solid-js@1.9.12)
       '@solid-primitives/event-listener':
-        specifier: ^2.4.5a
+        specifier: ^2.4.5
         version: 2.4.5(solid-js@1.9.12)
       '@solid-primitives/i18n':
         specifier: ^2.2.1
