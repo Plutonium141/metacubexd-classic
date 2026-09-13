@@ -35,7 +35,8 @@ export type ProxyNodeWithProvider = ProxyNode & { provider?: string }
 
 const {
   map: proxyLatencyTestingMap,
-  setWithCallback: setProxyLatencyTestingMap,
+  setWithCallback: _unused_setProxyLatencyTestingMap,
+  set: setProxyLatencyTesting,
 } = useStringBooleanMap()
 const {
   map: proxyGroupLatencyTestingMap,
@@ -228,34 +229,42 @@ export const useProxies = () => {
     timmeout: number | null,
   ) => {
     const nodeName = getNowProxyNodeName(proxyName)
+    // Resolve the provider from the actual leaf node we are about to test,
+    // not from the clicked group. A clicked group may live in top-level
+    // /proxies (provider === ''), while its selected leaf may belong to a
+    // proxy provider that we must query via /providers/proxies/.../healthcheck.
+    const resolvedProvider = provider || proxyNodeMap()[nodeName]?.provider || ''
 
-    setProxyLatencyTestingMap(nodeName, async () => {
-      const finalTestUrl = testUrl || urlForLatencyTest()
-      const currentNodeLatency = latencyMap()?.[nodeName] || {}
-      try {
-        const { delay } = await proxyLatencyTestAPI(
-          nodeName,
-          provider,
-          finalTestUrl,
-          timmeout ?? latencyTestTimeoutDuration(),
-        )
+    // Mark both keys as loading so both the group <Latency> and the leaf
+    // <Latency> (which query different map keys) show the spinner.
+    setProxyLatencyTesting(nodeName, true)
+    if (proxyName !== nodeName) {
+      setProxyLatencyTesting(proxyName, true)
+    }
 
-        currentNodeLatency[finalTestUrl] = delay
+    const finalTestUrl = testUrl || urlForLatencyTest()
+    const currentNodeLatency = latencyMap()?.[nodeName] || {}
+    try {
+      const { delay } = await proxyLatencyTestAPI(
+        nodeName,
+        resolvedProvider,
+        finalTestUrl,
+        timmeout ?? latencyTestTimeoutDuration(),
+      )
+      currentNodeLatency[finalTestUrl] = delay
+    } catch {
+      currentNodeLatency[finalTestUrl] = latencyQualityMap().NOT_CONNECTED
+    }
+    setLatencyMap((latencyMap) => ({
+      ...latencyMap,
+      [nodeName]: currentNodeLatency,
+    }))
 
-        setLatencyMap((latencyMap) => {
-          return {
-            ...latencyMap,
-            [nodeName]: currentNodeLatency,
-          }
-        })
-      } catch {
-        currentNodeLatency[finalTestUrl] = latencyQualityMap().NOT_CONNECTED
-        setLatencyMap((latencyMap) => ({
-          ...latencyMap,
-          [nodeName]: currentNodeLatency,
-        }))
-      }
-    })
+    // Clear both loading flags together.
+    setProxyLatencyTesting(nodeName, false)
+    if (proxyName !== nodeName) {
+      setProxyLatencyTesting(proxyName, false)
+    }
   }
 
   const proxyGroupLatencyTest = async (proxyGroupName: string) => {

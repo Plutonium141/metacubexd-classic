@@ -262,13 +262,16 @@ export default () => {
                             onProxyGroupLatencyTestClick(e, proxyGroup.name)
                           }
                           icon={
-                            <IconBrandSpeedtest
-                              class={twMerge(
-                                proxyGroupLatencyTestingMap()[
-                                  proxyGroup.name
-                                ] && 'animate-pulse text-success',
-                              )}
-                            />
+                            <Show
+                              when={
+                                proxyGroupLatencyTestingMap()[proxyGroup.name]
+                              }
+                              fallback={
+                                <IconBrandSpeedtest class="tabler-icon" />
+                              }
+                            >
+                              <span class="loading loading-infinity loading-sm text-success" />
+                            </Show>
                           }
                         />
                       </div>
@@ -389,13 +392,18 @@ export default () => {
                               )
                             }
                             icon={
-                              <IconBrandSpeedtest
-                                class={twMerge(
+                              <Show
+                                when={
                                   proxyProviderLatencyTestingMap()[
                                     proxyProvider.name
-                                  ] && 'animate-pulse text-success',
-                                )}
-                              />
+                                  ]
+                                }
+                                fallback={
+                                  <IconBrandSpeedtest class="tabler-icon" />
+                                }
+                              >
+                                <span class="loading loading-infinity loading-sm text-success" />
+                              </Show>
                             }
                           />
                         </div>
