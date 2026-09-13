@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.5](https://github.com/Plutonium141/metacubexd-classic/compare/v2.2.4...v2.2.5) (2026-09-13)
+
+
+### Bug Fixes
+
+* abnormal latency test animation ([1777d3a](https://github.com/Plutonium141/metacubexd-classic/commit/1777d3ab006523f25ab37fb36ceb3fe730cf0483))
+* upstream latency test API changes ([f914ad1](https://github.com/Plutonium141/metacubexd-classic/commit/f914ad1229bfdf019f44a1b490e342eb99488219))
+
 ## [2.2.4](https://github.com/Plutonium141/metacubexd-classic/compare/v2.2.3...v2.2.4) (2026-05-02)
 
 
